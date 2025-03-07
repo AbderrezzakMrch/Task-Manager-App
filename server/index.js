@@ -6,6 +6,13 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+// Routes 
+const authRoutes = require('./routes/auth');
+const taskRoutes = require('./routes/tasks');
+
+app.use('/api/auth', authRoutes);
+app.use('/api/tasks', taskRoutes);
+
 // Middleware
 app.use(cors());
 app.use(express.json());
