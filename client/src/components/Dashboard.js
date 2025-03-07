@@ -12,7 +12,7 @@ const Dashboard = () => {
 
   const fetchTasks = async () => {
     const token = localStorage.getItem("token");
-    const res = await axios.get("http://localhost:5000/api/tasks", {
+    const res = await axios.get("http://127.0.0.1:5000/api/tasks", {
       headers: { Authorization: `Bearer ${token}` },
     });
     setTasks(res.data);
@@ -22,7 +22,7 @@ const Dashboard = () => {
     e.preventDefault();
     const token = localStorage.getItem("token");
     await axios.post(
-      "http://localhost:5000/api/tasks",
+      "http://127.0.0.1:5000/api/tasks",
       { title, description },
       { headers: { Authorization: `Bearer ${token}` } }
     );
